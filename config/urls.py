@@ -1,12 +1,26 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
+
+# Django-Ecommerce URLs
 urlpatterns = [
+    path(
+        'accounts/',
+        include('accounts.urls'),
+    ),
+]
+
+# Django Application URLs
+urlpatterns += [
     path('admin/', admin.site.urls),
+]
+
+# JWT Authentication URLs
+urlpatterns += [
     path(
         'api/token/',
         TokenObtainPairView.as_view(),

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Django Restframework apps
     'rest_framework',
     'rest_framework_simplejwt',
+    # Django-Ecommerce apps
+    'accounts',
 ]
 
 MIDDLEWARE = [
