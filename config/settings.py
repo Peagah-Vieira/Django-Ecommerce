@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Django-Ecommerce apps
     'accounts',
     'products',
+    'orders',
 ]
 
 MIDDLEWARE = [

@@ -16,6 +16,10 @@ urlpatterns = [
         'products/',
         include('products.urls'),
     ),
+    path(
+        'orders/',
+        include('orders.urls'),
+    ),
 ]
 
 # Django Application URLs
