@@ -45,6 +45,9 @@ Change environment variables
 # Django Configuration
 # SECRET_KEY = 'GENERATE A KEY'
 
+# JWT Configuration
+# JWT_SECRET_KEY = 'GENERATE A KEY'
+
 # PostgreSQL Local Configuration
 # DB_ENGINE = 'django.db.backends.postgresql'
 # POSTGRES_DB = "CHANGE-ME"
@@ -52,12 +55,18 @@ Change environment variables
 # POSTGRES_PASSWORD = "CHANGE-ME"
 # POSTGRES_HOST = "127.0.0.1"
 # POSTGRES_PORT = "5432"
+
 ```
 
 Perform the migrations
 
 ```bash
 py manage.py migrate
+```
+
+Create a superuser
+```bash	
+py manage.py createsuperuser --email admin@example.com --username admin
 ```
 
 Start the server
@@ -71,3 +80,7 @@ py manage.py runserver
 [Python](https://www.python.org)
 
 [Django](https://www.djangoproject.com)
+
+[Django Restframework](https://www.django-rest-framework.org)
+
+[Django Restframework-SimpleJWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
