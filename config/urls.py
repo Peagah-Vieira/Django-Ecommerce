@@ -12,6 +12,10 @@ urlpatterns = [
         'accounts/',
         include('accounts.urls'),
     ),
+    path(
+        'products/',
+        include('products.urls'),
+    ),
 ]
 
 # Django Application URLs
