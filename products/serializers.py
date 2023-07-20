@@ -22,7 +22,13 @@ class ProductSerializer(serializers.ModelSerializer):
             'title',
             'description',
             'category',
+            'category_details',
             'price',
             'created_at',
             'updated_at',
         ]
+
+    category_details = CategorySerializer(
+        source="category",
+        read_only=True,
+    )
