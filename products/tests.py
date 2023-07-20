@@ -64,29 +64,21 @@ class CategoriesAPITest(test.APITestCase):
 
 
 class ProductsAPITest(test.APITestCase):
-    def make_category(self):
-        category_data = {
-            'name': 'Category',
-            'description': 'Description',
-        }
-        create_url = reverse('products:categories-api-list')
-        return self.client.post(
-            path=create_url,
-            data=category_data,
-        )
-
     def make_product(self):
-        self.make_category()
         product_data = {
             'title': 'Product',
             'description': 'Description',
-            'category': 1,
-            'price': 100,
+            "category": {
+                "name": "Tea",
+                "description": "Test Description"
+            },
+            'price': 100
         }
         create_url = reverse('products:products-api-list')
         return self.client.post(
             path=create_url,
             data=product_data,
+            format="json"
         )
 
     def test_products_list_returns_successfully(self):
