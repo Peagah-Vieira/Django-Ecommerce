@@ -11,3 +11,12 @@ orders_api_router.register(
 )
 
 urlpatterns = orders_api_router.urls
+
+items_api_router = SimpleRouter(trailing_slash=True)
+items_api_router.register(
+    prefix='items/api',
+    viewset=views.OrderItemsViewSet,
+    basename='items-api'
+)
+
+urlpatterns += items_api_router.urls
